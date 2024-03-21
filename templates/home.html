@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Home</title>
+</head>
+<body>
+    <header class=" titulo">
+        <h1>Lucia & Hugo...</h1>
+    </header>
+    <main class="principal-main">
+        <div class="principal">
+            <div class="principal-grid contenedor">
+                <div class="principal-formulario">
+                    <h2 class="form-titulo">Anecdotas</h2>
+                    <form action="/formulario" method="post" class="form">
+                        <div class="form-1">
+                            <label class="label" for="">Autor:</label>
+                            <input class="input-0" type="text" name="nombre">
+                        </div>
+                        <div class="form-1">
+                            <label class="label" for="">Recuerdo:</label>
+                            <textarea class="input-1" rows="4" name="texto"></textarea>
+                        </div>
+                        <div class="form-publicar">
+                            <input class="publicar" type="submit" value="Publicar">
+                        </div>
+                       
+                    </form>  
+                </div>
+                <div class="principal-texto">
+                    {% for resu in resultado[-4:] %}
+                    <div class="principal-1">
+                        <h1>Autor:{{resu[1]}}</h1>
+                        <h2>
+                            {{resu[2]}}
+                        </h2>
+                    </div>
+                    <div class="form-botones">
+                        <form action="/eliminar/{{resu[0]}}">
+                            <input class="eliminar" type="submit" value="Eliminar">
+                        </form>
+                        <form action="/editar/{{resu[0]}}">
+                            <input class="editar" type="submit" value="Editar">
+                         </form>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

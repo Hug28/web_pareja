@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Home</title>
+</head>
+<body>
+    <main class="principal-main">
+        <div class="principal">
+            <div class="principal-grid contenedor">
+                <div class="principal-formulario">
+                    <h2 class="form-titulo">Anecdotas</h2>
+                    <form action="/formulario/editar/{{resu[0]}}" method="post" class="form">
+                        <div class="form-1">
+                            <label class="label" for="">Autor:{{resu[1]}}</label>
+                            <input class="input-0" type="text" name="nombre" value="{{resu[1]}}">
+                        </div>
+                        <div class="form-1">
+                            <label class="label" for="">Recuerdo:</label>
+                            <textarea class="input-1" rows="4" name="texto">{{resu[2]}}</textarea>
+                        </div>
+                        <div class="form-publicar">
+                            <input class="publicar" type="submit" value="Publicar">
+                        </div>
+                       
+                    </form>  
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
