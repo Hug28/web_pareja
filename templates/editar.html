@@ -7,7 +7,7 @@
     <title>Home</title>
 </head>
 <body>
-    <main class="principal-main">
+    <main class="principal-main-editar">
         <div class="principal">
             <div class="principal-grid contenedor">
                 <div class="principal-formulario">
@@ -15,14 +15,14 @@
                     <form action="/formulario/editar/{{resu[0]}}" method="post" class="form">
                         <div class="form-1">
                             <label class="label" for="">Autor:{{resu[1]}}</label>
-                            <input class="input-0" type="text" name="nombre" value="{{resu[1]}}">
+                            <input class="input-0" type="text" name="nombre" value="{{resu[1]}}" required>
                         </div>
                         <div class="form-1">
                             <label class="label" for="">Recuerdo:</label>
-                            <textarea class="input-1" rows="4" name="texto">{{resu[2]}}</textarea>
+                            <textarea class="input-1" rows="4" name="texto" required>{{resu[2]}}</textarea>
                         </div>
                         <div class="form-publicar">
-                            <input class="publicar" type="submit" value="Publicar">
+                            <input class="publicar" type="submit" value="Editar">
                         </div>
                        
                     </form>  
