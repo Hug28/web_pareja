@@ -1,10 +1,7 @@
 body{
-    background-image: url(../img/images_corazon.png);
-  
-   
+    background-image: url(../img/images_corazon.png);   
     margin: 0;
     height: 110px;
-    
 }
 .titulo{
     text-align: center;
@@ -82,8 +79,8 @@ body{
     
     
 }
-.principal-1{
-    
+.principal-1:hover{
+    background-color: rgba(48, 43, 43, 0.9);
 
 }
 .principal h1{
@@ -146,3 +143,53 @@ h1{
     font-size: 50px;
 }
 
+.ver_todo{
+    background-color:antiquewhite;
+    color:black;
+    border: solid 1px black;
+    text-align: center;
+    text-decoration: none;
+    list-style: none;
+    width: 200px;
+    font-size: 30px;
+}
+.estilo_ver_todo{
+    background-color: antiquewhite;
+    margin: 20px 20px;
+    overflow: hidden;
+    border-radius:15px;
+    padding: 10px;
+    transition: transform 0.3s;
+
+}
+.estilo_ver_todo:hover{
+    transform: scale(1.4);
+    border: solid 1px black;
+}
+.estilo_ver_todo h1{
+    font-size: 20px;
+}
+
+
+.back{
+    background-image: url(../img/WhatsApp\ Image\ 2024-03-09\ at\ 18.06.08.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.principal_ver_todo{
+    display: grid;
+    grid-template-columns: repeat(6,300px);
+    column-gap: 10px;
+    margin: 30px 10px;
+}
+
+.volver_atras{
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+    text-align: end;  
+    background-color: black;
+    
+}

@@ -50,6 +50,20 @@ def eliminar(id):
         print (e)
         return ("Ocurrio un error en la eliminacion.")
 
+
+#ELIMINAR UN REGISTRO DE LA BD desde pagina ver_todo
+@app.route("/eliminar/ver_todo/<int:id>")
+def eliminar_ver_todo(id):
+    try:
+        conn=get_conn()
+        cur=conn.cursor()
+        cur.execute("DELETE  FROM pareja WHERE id=%s",(id,))
+        conn.commit()
+        return redirect("/ver_todo")
+    except Exception as e:
+        print (e)
+        return ("Ocurrio un error en la eliminacion desde pagina ver_todo.")
+
 #EDITAR
 @app.route("/editar/<int:id>")
 def editar(id):
@@ -77,3 +91,20 @@ def editar1(id):
         except Exception as e:
             print (e)
             return ("Ocurrio un error en la eliminacion.")
+        
+@app.route("/ver_todo")
+def ver_todo():
+    try:
+        conn=get_conn()
+        cur=conn.cursor()
+        cur.execute("SELECT * FROM pareja")
+        resu=cur.fetchall()
+        return render_template("ver_todo.html",resultado=resu)
+    except Exception as e:
+        print(e)
+        return ("Error, no pudo mostrar todos las anecdotas")
+    
+
+@app.route("/volver_atras")
+def volver():
+    return redirect("/")
